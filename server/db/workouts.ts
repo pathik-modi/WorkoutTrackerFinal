@@ -19,12 +19,24 @@ export async function getUserWorkouts(id: number): Promise<Workouts[]> {
     .select()
 }
 
-// get all exercises
-export async function getAllExercises(): Promise<Exercises[]> {
-  return db('exercises').select()
+// add newWorkout
+interface AddWorkout {
+  date: string
+  userId: number
+}
+export async function addWorkout({ date, userId }: AddWorkout) {
+  await db('workouts')
+    .join('users', 'workouts.userId', 'users.id')
+    .insert(date, userId)
 }
 
-// get all workoutExercise
-export async function getAllWorkoutExercise(): Promise<WorkoutExercise[]> {
-  return db('workoutExercise').select()
+// // add workoutExercise for user
+// export async function addWorkoutExercise(newWorkoutExercise) {
+//   const { userId, date, workoutId, exerciseId, set, weight } =
+//     newWorkoutExercise
+// }
+
+// get exercises for a user
+export async function getAllExercises(): Promise<Exercises[]> {
+  return db('exercises').select()
 }
