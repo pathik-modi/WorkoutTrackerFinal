@@ -1,18 +1,17 @@
-// import {
-//   useQuery,
-//   useMutation,
-//   useQueryClient,
-//   MutationFunction,
-// } from '@tanstack/react-query'
-// import { getFruits } from '../apis/workouts.ts'
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  MutationFunction,
+} from '@tanstack/react-query'
+import { getAllUsers } from '../apis/workouts.ts'
 
-// export function useFruits() {
-//   const query = useQuery({ queryKey: ['fruits'], queryFn: getFruits })
-//   return {
-//     ...query,
-//     // Extra queries go here e.g. addFruit: useAddFruit()
-//   }
-// }
+export function useGetAllUsers() {
+  const query = useQuery({ queryKey: ['users'], queryFn: getAllUsers })
+  return {
+    ...query,
+  }
+}
 
 // export function useFruitsMutation<TData = unknown, TVariables = unknown>(
 //   mutationFn: MutationFunction<TData, TVariables>,

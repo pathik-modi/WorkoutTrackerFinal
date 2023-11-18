@@ -12,6 +12,7 @@ export interface Workouts {
   id?: number
   date?: string
   userId?: number
+  name?: string
 }
 
 export interface WorkoutExercise {

@@ -3,5 +3,11 @@ export async function seed(knex) {
     {
       name: 'Pathik',
     },
+    {
+      name: 'Superman',
+    },
+    {
+      name: 'Modiji',
+    },
   ])
 }

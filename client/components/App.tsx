@@ -12,6 +12,9 @@ function App() {
         <section className="main">
           <Outlet />
         </section>
+        <footer>
+          <p>Home || Start Workout || Past Workout || Stats</p>
+        </footer>
       </div>
     </>
   )

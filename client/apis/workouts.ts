@@ -1,10 +1,16 @@
 import request from 'superagent'
-import { Users } from '../../models/fruit'
+import { Users, Workouts } from '../../models/fruit'
 
-const rootUrl = '/api/v1/'
+const rootUrl = '/api/v1/workout'
 
+// users
 export async function getAllUsers(): Promise<Users[]> {
   const res = await request.get(rootUrl)
-  console.log(res.body)
+  return res.body
+}
+
+// workouts
+export async function getUserWorkouts(id: number) {
+  const res = await request.get(`${rootUrl}/${id}/pastWorkouts`)
   return res.body
 }
