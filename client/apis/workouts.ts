@@ -14,3 +14,8 @@ export async function getUserWorkouts(id: number) {
   const res = await request.get(`${rootUrl}/${id}/pastWorkouts`)
   return res.body
 }
+
+// addWorkout
+export async function addWorkout(userId) {
+  return await request.post(`${rootUrl}/dashboard/${userId}`).send({ userId })
+}

@@ -25,16 +25,8 @@ interface AddWorkout {
   userId: number
 }
 export async function addWorkout({ date, userId }: AddWorkout) {
-  await db('workouts')
-    .join('users', 'workouts.userId', 'users.id')
-    .insert(date, userId)
+  await db('workouts').insert({ date, userId })
 }
-
-// // add workoutExercise for user
-// export async function addWorkoutExercise(newWorkoutExercise) {
-//   const { userId, date, workoutId, exerciseId, set, weight } =
-//     newWorkoutExercise
-// }
 
 // get exercises for a user
 export async function getAllExercises(): Promise<Exercises[]> {

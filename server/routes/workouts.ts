@@ -26,9 +26,7 @@ router.post('/dashboard/:userId', async (req, res) => {
   const userId = Number(req.params.userId)
   const { date } = req.body
   try {
-    const newData = await addWorkout({ userId, date })
-    console.log(newData)
-
+    await addWorkout({ date, userId })
     res.redirect('/')
   } catch (err) {
     res.status(500).json({ error: 'Server Error' })
