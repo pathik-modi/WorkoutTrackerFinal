@@ -1,5 +1,10 @@
 import { Router } from 'express'
-import { addWorkout, getAllUsers, getUserWorkouts } from '../db/workouts'
+import {
+  addWorkout,
+  getAllUsers,
+  getUserWorkouts,
+  getWorkoutExercise,
+} from '../db/workouts'
 
 const router = Router()
 
@@ -12,6 +17,7 @@ router.get('/', async (req, res) => {
   }
 })
 
+// get past workouts
 router.get('/:id/pastWorkouts', async (req, res) => {
   const id = Number(req.params.id)
   try {
@@ -22,12 +28,25 @@ router.get('/:id/pastWorkouts', async (req, res) => {
   }
 })
 
+// add workout
 router.post('/dashboard/:userId', async (req, res) => {
   const userId = Number(req.params.userId)
   const { date } = req.body
   try {
     await addWorkout({ date, userId })
-    res.redirect('/')
+    res.sendStatus(201)
+  } catch (err) {
+    res.status(500).json({ error: 'Server Error' })
+  }
+})
+
+// show workoutExercise for workoutId
+// get the workoutId & render all exercises for that workout
+router.get('/:workoutId/newWorkout', async (req, res) => {
+  const workoutId = Number(req.params.workoutId)
+  try {
+    const workoutExercise = await getWorkoutExercise(workoutId)
+    res.json(workoutExercise)
   } catch (err) {
     res.status(500).json({ error: 'Server Error' })
   }

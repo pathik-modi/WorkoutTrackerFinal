@@ -8,7 +8,8 @@ function Dashboard() {
 
   function startNewWorkout() {
     const userId = Number(id)
-    addWorkout(userId)
+    const date = String(new Date())
+    addWorkout({ date, userId })
   }
 
   return (

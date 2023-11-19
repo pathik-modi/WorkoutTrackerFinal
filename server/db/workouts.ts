@@ -28,7 +28,15 @@ export async function addWorkout({ date, userId }: AddWorkout) {
   await db('workouts').insert({ date, userId })
 }
 
-// get exercises for a user
+// get a list of all Exercises
 export async function getAllExercises(): Promise<Exercises[]> {
   return db('exercises').select()
+}
+
+// get exercises for a user
+export async function getWorkoutExercise(workoutId: number) {
+  return db('workoutExercise')
+    .join('workouts', 'workouts.id', 'workoutExercise.workoutId')
+    .where('workoutExercise.workoutId', workoutId)
+    .select()
 }

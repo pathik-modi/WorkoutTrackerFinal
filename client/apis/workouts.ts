@@ -16,6 +16,12 @@ export async function getUserWorkouts(id: number) {
 }
 
 // addWorkout
-export async function addWorkout(userId) {
-  return await request.post(`${rootUrl}/dashboard/${userId}`).send({ userId })
+interface AddWorkout {
+  date: string
+  userId: number
+}
+export async function addWorkout({ date, userId }: AddWorkout) {
+  return await request
+    .post(`${rootUrl}/dashboard/${userId}`)
+    .send({ date, userId })
 }
