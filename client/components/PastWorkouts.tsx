@@ -21,15 +21,15 @@ function PastWorkouts() {
 
   return (
     <>
-      <p>All Past Workouts - {data[0].name}</p>
       <div>
-        {data.map((p: Workouts) => (
-          <div key={p.date}>
-            <Link to={`/workoutExercise/${p.workoutId}`}>
-              {p.workoutId}. {p.date}
-            </Link>
-          </div>
-        ))}
+        <h2>Past Workouts - {data[0].userName}</h2>
+        <div className="userNames">
+          {data.map((p: Workouts) => (
+            <div key={p.date}>
+              <Link to={`/workoutExercise/${p.workoutId}`}>{p.date}</Link>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   )

@@ -9,17 +9,22 @@ function Dashboard() {
   return (
     <>
       <div>
-        <button>
-          <Link to={`/newWorkout/${id}`}>Start Workout</Link>
-        </button>
-      </div>
-      <div>
-        <button>
-          <Link to={`/${id}/pastWorkouts`}>Past Workouts</Link>
-        </button>
-      </div>
-      <div>
-        <button>Stats</button>
+        <h2>Dashboard</h2>
+        <div>
+          <div className="dashboardButtons">
+            <Link to={`/newWorkout/${id}`}>Start Workout</Link>
+          </div>
+        </div>
+        <div>
+          <div className="dashboardButtons">
+            <Link to={`/${id}/pastWorkouts`}>Past Workouts</Link>
+          </div>
+        </div>
+        <div>
+          <div className="dashboardButtons">
+            <Link to={'/'}>Stats</Link>
+          </div>
+        </div>
       </div>
     </>
   )

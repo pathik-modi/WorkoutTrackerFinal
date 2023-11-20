@@ -2,5 +2,117 @@
 
 html, 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Pontiac', sans-serif;
+  text-align: center; /* Center the text horizontally */
+  background-color: #EFE6D1;
+}
+
+.userNames {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 10px; /* Adjust padding for each button */  
+}
+
+.userNames > div {
+  background-color: #265954;
+  border-radius: 2px; /* Round the corners */
+  text-align: center; /* Center the text horizontally */
+}
+
+.userNames a {
+  display: block;
+  text-decoration: none;
+  color: #EFE6D1;
+  padding: 10px;
+  /* Add other link styles as needed */
+}
+h2 {
+  margin-top: 60px;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: black;
+}
+
+.dashboardButtons {
+  margin-bottom: 10px;
+  padding: 25px 1px; /* Adjust padding to create spacing inside the button */
+  background-color: black;
+
+  border-radius: 2px; /* Round the corners */
+  text-align: center; /* Center the text horizontally */
+}
+
+.dashboardButtons a {
+  text-decoration: none;
+  color: #EFE6D1;
+}
+
+.workoutExerciseTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Add margin for spacing */
+}
+
+.workoutExerciseTable th,
+.workoutExerciseTable td {
+  border: 1px solid #e5e5e5; /* Add border to table cells */
+  padding: 8px; /* Adjust padding for cells */
+  text-align: left; /* Align text to the left within cells */
+}
+
+.workoutExerciseTable th {
+  background-color: #ccc; /* Background color for table header cells */
+  font-weight: bold;
+}
+
+.workoutExerciseTable tbody tr {
+  background-color: #ccc; /* Alternate row background color */
+}
+
+
+.workoutExerciseTable tbody tr:hover {
+  background-color: #e0e0e0; /* Hover color for rows */
+}
+
+.addExerciseForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.addExerciseForm select,
+.addExerciseForm input {
+  padding: 8px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+}
+
+.addExerciseForm select {
+  flex: 1;
+  max-width: 150px;
+}
+
+.addExerciseForm input[type='number'] {
+  width: 50px;
+  color: white;
+}
+.addExerciseForm label input[type='number'] {
+  margin-right: 5px;
+}
+
+.addExerciseForm button {
+  padding: 4px 8px;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Remove background and set text color */
+  background-color: transparent;
+  color: #000; /* Change the text color as needed */
 }

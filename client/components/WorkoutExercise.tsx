@@ -23,10 +23,9 @@ function WorkoutExercise() {
   return (
     <>
       <div>
-        <h3>
-          <p>User: {data[0].usersName}</p>
-          <p>Date: {data[0].workoutDate}</p>
-        </h3>
+        <h2>
+          {data[0].usersName} {data[0].workoutDate}
+        </h2>
       </div>
       <div>
         <AddWorkoutExercise />

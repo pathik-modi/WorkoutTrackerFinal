@@ -61,5 +61,29 @@ export async function seed(knex) {
       set: 1,
       weight: 99,
     },
+    {
+      workoutId: 3,
+      exerciseId: 1,
+      set: 1,
+      weight: 50,
+    },
+    {
+      workoutId: 4,
+      exerciseId: 1,
+      set: 1,
+      weight: 50,
+    },
+    {
+      workoutId: 5,
+      exerciseId: 1,
+      set: 1,
+      weight: 50,
+    },
+    {
+      workoutId: 6,
+      exerciseId: 1,
+      set: 1,
+      weight: 50,
+    },
   ])
 }

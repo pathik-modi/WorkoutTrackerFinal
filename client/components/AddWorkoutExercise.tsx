@@ -41,7 +41,7 @@ function AddWorkoutExercise() {
 
   return (
     <>
-      <form onSubmit={handleExerciseSubmit}>
+      <form onSubmit={handleExerciseSubmit} className="addExerciseForm">
         <select
           name="exercise"
           id="exercise"
@@ -57,11 +57,10 @@ function AddWorkoutExercise() {
           <option value={3}>BenchPress</option>
         </select>
         <input type="number" name="set" placeholder="Set" min="1" />
-        <label htmlFor="weight">
-          <input type="number" name="weight" placeholder="Weight" min="1" />
-          kg
-        </label>
-        <button type="submit">--Add--</button>
+        <input type="number" name="weight" placeholder="kg" min="1" />
+        <button type="submit" className="addExerciseButton">
+          +
+        </button>
       </form>
     </>
   )

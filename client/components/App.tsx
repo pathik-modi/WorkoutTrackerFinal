@@ -5,8 +5,8 @@ function App() {
     <>
       <div className="app">
         <header>
-          <Link to={'/'}>
-            <h1>Workout App</h1>
+          <Link to={'/'} className="logo-link">
+            <h1>Beef Cakes</h1>
           </Link>
         </header>
         <section className="main">

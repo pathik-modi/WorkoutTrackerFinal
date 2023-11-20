@@ -6,14 +6,14 @@ function SelectUser() {
   return (
     <>
       <div>
-        <h2>Select User</h2>
-        <ul>
+        <h2>User</h2>
+        <div className="userNames">
           {data?.map((users) => (
-            <li key={users.id}>
+            <div key={users.id}>
               <Link to={`dashboard/${users.id}`}>{users.name}</Link>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </>
   )
