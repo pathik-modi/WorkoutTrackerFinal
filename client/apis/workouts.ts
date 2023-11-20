@@ -21,7 +21,8 @@ interface AddWorkout {
   userId: number
 }
 export async function addWorkout({ date, userId }: AddWorkout) {
-  return await request
-    .post(`${rootUrl}/dashboard/${userId}`)
+  const res = await request
+    .post(`${rootUrl}/newWorkout/${userId}`)
     .send({ date, userId })
+  return res.body
 }

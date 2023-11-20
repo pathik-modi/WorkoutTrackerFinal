@@ -18,10 +18,10 @@ router.get('/', async (req, res) => {
 })
 
 // get past workouts
-router.get('/:id/pastWorkouts', async (req, res) => {
-  const id = Number(req.params.id)
+router.get('/:userId/pastWorkouts', async (req, res) => {
+  const userId = Number(req.params.userId)
   try {
-    const userWorkouts = await getUserWorkouts(id)
+    const userWorkouts = await getUserWorkouts(userId)
     res.json(userWorkouts)
   } catch (err) {
     res.status(500).json({ error: 'Server Error' })
@@ -29,12 +29,12 @@ router.get('/:id/pastWorkouts', async (req, res) => {
 })
 
 // add workout
-router.post('/dashboard/:userId', async (req, res) => {
+router.post('/newWorkout/:userId', async (req, res) => {
   const userId = Number(req.params.userId)
   const { date } = req.body
   try {
-    await addWorkout({ date, userId })
-    res.sendStatus(201)
+    const workoutId = await addWorkout({ date, userId })
+    res.json({ workoutId: workoutId[0] })
   } catch (err) {
     res.status(500).json({ error: 'Server Error' })
   }

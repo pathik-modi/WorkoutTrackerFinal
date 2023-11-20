@@ -10,6 +10,6 @@ export const routes = createRoutesFromElements(
     <Route index element={<UsersPage />} />
     <Route path="dashboard/:id" element={<Dashboard />} />
     <Route path="/:id/pastWorkouts" element={<PastWorkouts />} />
-    <Route path="/:workoutId/newWorkout" element={<NewWorkout />} />
+    <Route path="/newWorkout/:userId" element={<NewWorkout />} />
   </Route>,
 )

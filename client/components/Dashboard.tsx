@@ -6,17 +6,11 @@ function Dashboard() {
   const { id } = useParams()
   console.log(`Dashboard: ${id}`)
 
-  function startNewWorkout() {
-    const userId = Number(id)
-    const date = String(new Date())
-    addWorkout({ date, userId })
-  }
-
   return (
     <>
       <div>
-        <button onClick={startNewWorkout}>
-          <Link to={`/${id}/newWorkout`}>Start Workout</Link>
+        <button>
+          <Link to={`/newWorkout/${id}`}>Start Workout</Link>
         </button>
       </div>
       <div>

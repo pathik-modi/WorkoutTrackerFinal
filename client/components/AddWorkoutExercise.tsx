@@ -2,12 +2,14 @@ function AddWorkoutExercise() {
   return (
     <>
       <form>
-        <button>--Delete--</button>
-        <label htmlFor="exercise">
-          <span> * </span>
-        </label>
-        <select name="exercise" id="exercise" required aria-required="true">
-          <option disabled selected>
+        <select
+          name="exercise"
+          id="exercise"
+          required
+          aria-required="true"
+          defaultValue="exercise"
+        >
+          <option disabled value="exercise">
             Exercise
           </option>
           <option value="squats">Squats</option>
