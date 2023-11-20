@@ -60,7 +60,7 @@ export async function getWorkoutExercise(
     )
 }
 
-export async function addWorkoutExercise({ fullWorkoutExercise }: any) {
+export async function addWorkoutExercise(fullWorkoutExercise: any) {
   const { workoutId, exerciseId, set, weight } = fullWorkoutExercise
   return db('workoutExercise').insert({
     workoutId,

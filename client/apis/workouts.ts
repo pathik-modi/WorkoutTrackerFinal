@@ -32,3 +32,20 @@ export async function getWorkoutExercise(workoutId: number) {
   const res = await request.get(`${rootUrl}/workoutExercise/${workoutId}`)
   return res.body
 }
+
+interface FullWorkoutExercise {
+  workoutId: number
+  exerciseId: number
+  set: number
+  weight: number
+}
+export async function addWorkoutExercise({
+  workoutId,
+  exerciseId,
+  set,
+  weight,
+}: FullWorkoutExercise) {
+  return await request
+    .post(`${rootUrl}/workoutExercise/${workoutId}`)
+    .send({ exerciseId, set, weight })
+}

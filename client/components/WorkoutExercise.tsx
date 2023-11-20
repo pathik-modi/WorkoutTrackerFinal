@@ -29,7 +29,7 @@ function WorkoutExercise() {
         </h3>
       </div>
       <div>
-        <AddWorkoutExercise workoutId={data[0].workoutId} />
+        <AddWorkoutExercise />
       </div>
 
       <table className="workoutExerciseTable">

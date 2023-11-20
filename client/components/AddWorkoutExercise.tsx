@@ -1,20 +1,41 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useParams } from 'react-router-dom'
+import { addWorkoutExercise } from '../apis/workouts'
 
-function AddWorkoutExercise(workoutId) {
-  // const queryClient = useQueryClient()
-  // const mutation = useMutation({
-  //   mutationFn:
-  //   onSuccess: () => {
-  //     queryClient.invalidateQueries(['workoutExercise'])
-  //   },
-  // })
+function AddWorkoutExercise() {
+  const { workoutId } = useParams()
+  const numberWorkoutId = Number(workoutId)
+
+  const queryClient = useQueryClient()
+  const mutation = useMutation({
+    mutationFn: ({
+      exerciseId,
+      set,
+      weight,
+    }: {
+      exerciseId: number
+      set: number
+      weight: number
+    }) =>
+      addWorkoutExercise({
+        workoutId: numberWorkoutId,
+        exerciseId,
+        set,
+        weight,
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['workoutExercise'])
+    },
+  })
   async function handleExerciseSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const form = new FormData(e.currentTarget)
-    const exerciseDetail = form.get('exercise')?.valueOf() as string
-    const setDetail = form.get('set')?.valueOf() as number
-    const weightDetail = form.get('weight')?.valueOf() as number
-    console.log({ exerciseDetail, setDetail, weightDetail })
+    const exerciseId = form.get('exercise')?.valueOf() as number
+    const set = form.get('set')?.valueOf() as number
+    const weight = form.get('weight')?.valueOf() as number
+    console.log(exerciseId, set, weight)
+
+    mutation.mutate({ exerciseId, set, weight })
     e.currentTarget.reset()
   }
 
@@ -31,16 +52,16 @@ function AddWorkoutExercise(workoutId) {
           <option disabled value="exercise">
             Exercise
           </option>
-          <option value="Squats">Squats</option>
-          <option value="Deadlift">Deadlifts</option>
-          <option value="BenchPress">BenchPress</option>
+          <option value={1}>Squats</option>
+          <option value={2}>Deadlifts</option>
+          <option value={3}>BenchPress</option>
         </select>
         <input type="number" name="set" placeholder="Set" min="1" />
         <label htmlFor="weight">
           <input type="number" name="weight" placeholder="Weight" min="1" />
           kg
         </label>
-        <button>--Add--</button>
+        <button type="submit">--Add--</button>
       </form>
     </>
   )

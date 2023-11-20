@@ -65,6 +65,7 @@ router.post('/workoutExercise/:workoutId', async (req, res) => {
     })
     res.sendStatus(200)
   } catch (err) {
+    console.error(err)
     res.status(500).json({ error: 'Server Error' })
   }
 })
