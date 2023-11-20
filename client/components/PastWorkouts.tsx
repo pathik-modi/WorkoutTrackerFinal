@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getUserWorkouts } from '../apis/workouts'
+import { Workouts } from '../../models/fruit'
 
 function PastWorkouts() {
   const { id } = useParams()
@@ -22,8 +23,12 @@ function PastWorkouts() {
     <>
       <p>All Past Workouts - {data[0].name}</p>
       <div>
-        {data.map((p) => (
-          <div key={p.date}>{p.date}</div>
+        {data.map((p: Workouts) => (
+          <div key={p.date}>
+            <Link to={`/workoutExercise/${p.workoutId}`}>
+              {p.workoutId}. {p.date}
+            </Link>
+          </div>
         ))}
       </div>
     </>

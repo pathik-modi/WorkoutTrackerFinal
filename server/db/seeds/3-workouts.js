@@ -16,13 +16,5 @@ export async function seed(knex) {
       date: '16/11/2023',
       userId: 2,
     },
-    {
-      date: '16/11/2023',
-      userId: 3,
-    },
-    {
-      date: '18/11/2023',
-      userId: 3,
-    },
   ])
 }

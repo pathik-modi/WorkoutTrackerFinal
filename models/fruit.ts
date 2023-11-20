@@ -9,16 +9,20 @@ export interface Exercises {
 }
 
 export interface Workouts {
-  id?: number
+  workoutId?: number
   date?: string
   userId?: number
-  name?: string
+  userName?: string
 }
 
-export interface WorkoutExercise {
-  id?: number
+export interface WorkoutExerciseInterface {
+  workoutExerciseId?: number
   workoutId?: number
+  workoutUserId?: number
+  usersName?: string
+  workoutDate?: string
   exerciseId?: number
+  exercisesName?: string
   set?: number
   weight?: number
 }
