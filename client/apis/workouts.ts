@@ -28,7 +28,7 @@ export async function addWorkout({ date, userId }: AddWorkout) {
 }
 
 // get workoutExercises by workoutId
-export async function getWorkoutExercise(workoutId: number) {
+export async function getWorkoutExercise(workoutId?: number) {
   const res = await request.get(`${rootUrl}/workoutExercise/${workoutId}`)
   return res.body
 }

@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 function Dashboard() {
   const { id } = useParams()
+
   console.log(`Dashboard: ${id}`)
   const [workoutId, setWorkoutId] = useState()
 
@@ -12,8 +13,7 @@ function Dashboard() {
     const userId = Number(id)
     const date = new Date().toLocaleDateString('en-GB')
     const { workoutId } = await addWorkout({ date, userId })
-    const newWorkoutId = Number(workoutId)
-    setWorkoutId(newWorkoutId)
+    setWorkoutId(Number(workoutId))
   }
 
   return (
@@ -22,9 +22,18 @@ function Dashboard() {
         <h2>Dashboard</h2>
         <div>
           <div className="dashboardButtons">
-            <Link to={`/workoutExercise/${workoutId}`}>
-              <button onClick={startNewWorkout}>Start Workout</button>
-            </Link>
+            <button
+              onClick={startNewWorkout}
+              style={{
+                background: 'none',
+                border: 'none',
+                padding: 0,
+                cursor: 'pointer',
+                color: '#EFE6D1',
+              }}
+            >
+              <Link to={`/workoutExercise/${workoutId}`}>Start Workout</Link>
+            </button>
           </div>
         </div>
         <div>

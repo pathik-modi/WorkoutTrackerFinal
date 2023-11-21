@@ -23,35 +23,71 @@ function WorkoutExercise() {
   return (
     <>
       <div>
-        <h2>
-          {data[0].usersName} {data[0].workoutDate}
-        </h2>
-      </div>
-      <div>
-        <AddWorkoutExercise />
-      </div>
+        {data ? (
+          <div>
+            <h2>
+              {data[0]?.usersName} {data[0]?.workoutDate}
+            </h2>
+            <div>
+              <AddWorkoutExercise />
+            </div>
 
-      <table className="workoutExerciseTable">
-        <thead>
-          <tr>
-            <th>Exercise </th>
-            <th> Set </th>
-            <th> Weight (kg) </th>
-          </tr>
-        </thead>
+            <table className="workoutExerciseTable">
+              <thead>
+                <tr>
+                  <th>Exercise </th>
+                  <th> Set </th>
+                  <th> Weight (kg) </th>
+                </tr>
+              </thead>
 
-        <tbody>
-          {data.map((item: WorkoutExerciseInterface) => {
-            return (
-              <tr key={item.workoutExerciseId}>
-                <td> {item.exercisesName} </td>
-                <td> {item.set} </td>
-                <td> {item.weight} </td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
+              <tbody>
+                {data.map((item: WorkoutExerciseInterface) => {
+                  return (
+                    <tr key={item.workoutExerciseId}>
+                      <td> {item.exercisesName} </td>
+                      <td> {item.set} </td>
+                      <td> {item.weight} </td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <>
+            <h2>
+              {data[0].usersName} {data[0].workoutDate}
+            </h2>
+
+            <div>
+              <AddWorkoutExercise />
+            </div>
+
+            <table className="workoutExerciseTable">
+              <thead>
+                <tr>
+                  <th>Exercise </th>
+                  <th> Set </th>
+                  <th> Weight (kg) </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {data.map((item: WorkoutExerciseInterface) => {
+                  return (
+                    <tr key={item.workoutExerciseId}>
+                      <td> {item.exercisesName} </td>
+                      <td> {item.set} </td>
+                      <td> {item.weight} </td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </>
+        )}
+      </div>
     </>
   )
 }

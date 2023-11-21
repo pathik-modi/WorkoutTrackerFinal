@@ -25,7 +25,7 @@ function PastWorkouts() {
         <h2>Past Workouts - {data[0].userName}</h2>
         <div className="userNames">
           {data.map((p: Workouts) => (
-            <div key={p.date}>
+            <div key={p.workoutId}>
               <Link to={`/workoutExercise/${p.workoutId}`}>{p.date}</Link>
             </div>
           ))}

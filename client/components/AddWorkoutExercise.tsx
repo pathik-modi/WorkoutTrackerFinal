@@ -54,7 +54,15 @@ function AddWorkoutExercise() {
           </option>
           <option value={1}>Squats</option>
           <option value={2}>Deadlifts</option>
-          <option value={3}>BenchPress</option>
+          <option value={3}>Deadlifts</option>
+          <option value={4}>Lat Pulldowns</option>
+          <option value={5}>Lat Rows</option>
+          <option value={6}>Bench Press(flat)</option>
+          <option value={7}>Incline Bench Press</option>
+          <option value={8}>Overhead Shoulder Press</option>
+          <option value={9}>Lateral Raise</option>
+          <option value={10}>Bicep Curls</option>
+          <option value={11}>Overhead Dumbell Extension</option>
         </select>
         <input type="number" name="set" placeholder="Set" min="1" />
         <input type="number" name="weight" placeholder="kg" min="1" />

@@ -4,10 +4,34 @@ export async function seed(knex) {
       name: 'Squats',
     },
     {
-      name: 'Bench Press',
+      name: 'Lunges',
     },
     {
-      name: 'Deadlift',
+      name: 'Deadlifts',
+    },
+    {
+      name: 'Lat Pulldowns',
+    },
+    {
+      name: 'Lat Rows',
+    },
+    {
+      name: 'Bench Press(flat)',
+    },
+    {
+      name: 'Incline Bench Press',
+    },
+    {
+      name: 'Overhead Shoulder Press',
+    },
+    {
+      name: 'Lateral Raise',
+    },
+    {
+      name: 'Bicep Curls',
+    },
+    {
+      name: 'Overhead Dumbell Extension',
     },
   ])
 }
