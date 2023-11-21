@@ -7,7 +7,7 @@ export async function seed(knex) {
       name: 'Superman',
     },
     {
-      name: 'Modiji',
+      name: 'Trump',
     },
   ])
 }
